@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html ng-app="tbDevPortfolio">
+  <head>
+    <meta charset="utf-8">
+    <title>Tim Berry | Full-Stack Javascript Web Developer | AngularJS, Node.js</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Quattrocento+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+    <script>
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top -60
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    </script>
+
+  </head>
+  <body ng-controller="AppCtrl as appCtrl">
+    <header>
+      <div class="content">
+        <div class="logo">
+          < timberry.io />
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <!-- <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li> -->
+          </ul>
+        </nav>
+      </div> <!-- content -->
+    </header>
+
+
+    <div class="main">
+      <div class="content">
+        <!-- <div ui-view></div> -->
+
+        <section id="home">
+          <div class="cell">
+            <img src="/assets/images/tberry.jpg">
+            <div class="home-text">
+              <h2>Tim Berry</h2><br>
+              Full-Stack Web Developer | AngularJS, Node.js, Express, MongoDB<br><br>
+              <a href="https://github.com/tberry30" target="_blank"><i class="fa fa-github-square"></i></a>
+              <a href="https://www.linkedin.com/in/timothyaberry" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+              <!-- <i class="fa fa-facebook-square"></i> -->
+              <!-- <i class="fa fa-twitter-square"></i> -->
+              <a href="#contact"><i class="fa fa-envelope-square"></i></a>
+              <!-- <a href="#contact"><i class="fa fa-envelope-square"></i></a> -->
+            </div>
+          </div>
+        </section>
+
+        <section id="about">
+          <h2>About</h2>
+          Hello, world! My name is Tim.<br><br>I'm a full-stack web developer, with a background in inventory management, the outdoor industry, and music production. I have a passion for developing responsive, clean websites with a great user experience.
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <div class="row">
+            <div class="cell"><img src="/assets/images/html5.png">HTML5</div>
+            <div class="cell"><img src="/assets/images/css3.png">CSS3</div>
+            <div class="cell"><img src="/assets/images/javascript.png">Javascript</div>
+            <div class="cell"><img src="/assets/images/angular.png">AngularJS</div>
+            <div class="cell"><img src="/assets/images/node.png">Node.js</div>
+          </div>
+          <div class="row">
+            <div class="cell"><img src="/assets/images/git.png">Git</div>
+            <div class="cell"><img src="/assets/images/gulp.png">Gulp</div>
+            <div class="cell"><img src="/assets/images/php.png">PHP</div>
+            <!-- <div class="cell"><img src="/assets/images/react.png">ReactJS</div> -->
+            <!-- <div class="cell"><img src="/assets/images/sass.png">SASS</div> -->
+          </div>
+          <!-- <div class="row">
+            <div class="cell"><img src="/assets/images/mongodb.png"></div>
+            <div class="cell"><img src="/assets/images/mysql.png"></div>
+          </div> -->
+        </section>
+
+
+
+        <section id="portfolio">
+          <h2>Portfolio</h2>
+          <div class="ui-view-container">
+
+            <a class="portfolio-nav" ng-click="appCtrl.back()"><i class="fa fa-chevron-left"></i></a>
+            <a class="portfolio-nav" ng-click="appCtrl.forward()"><i class="fa fa-chevron-right"></i></a>
+
+            <div ui-view="portfolio" class="{{appCtrl.direction}}"></div>
+          </div>
+        </section>
+
+        <!-- <section id="resume">
+          <h2>Resume</h2>
+        </section> -->
+
+        <!-- <section id="contact">
+          <h2>Contact</h2>
+          <div class="contact-form">
+            <form ng-submit="">
+              <input type="text" id="username" ng-model="contact.name" placeholder="Name"><br>
+              <input type="password" id="password" ng-model="contact.email" placeholder="Email"><br>
+              <textarea rows="9" ng-model="contact.body" placeholder="Message"></textarea><br><br>
+
+              <button class="btn" type="submit">Send</button>
+              <button class="btn" type="reset">Reset</button>
+            </form>
+          <div>
+        </section> -->
+
+      </div> <!-- content -->
+      <div class="push"></div>
+    </div> <!-- main-content -->
+
+    <footer>
+      <div class="content">
+        Copyright &copy;
+        <script type="text/javascript">
+          var d = new Date()
+          document.write(d.getFullYear())
+        </script>
+        | timberry.io | All rights reserved
+      </div> <!-- content -->
+    </footer>
+
+    <script src="../../bower_components/angular/angular.js"></script>
+    <script src="../../bower_components/angular-animate/angular-animate.js"></script>
+    <script src="../../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <script src="./app.module.js"></script>
+    <script src="./app.routes.js"></script>
+    <script src="./app.controller.js"></script>
+
+    <script src="./home/home.controller.js"></script>
+    <script src="./portfolio/portfolio.controller.js"></script>
+  </body>
+</html>
