@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/tberry30/portfolio",
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.2",
+    "express": "^4.13.4",
+    "sendgrid": "^4.7.1"
   }
 }

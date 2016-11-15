@@ -16,6 +16,7 @@ body {
 
 header {
 	position: fixed;
+	top: 0;
 	z-index: 1000;
 	width: 100%;
   height: 60px;
@@ -56,10 +57,10 @@ section {
 	position: relative;
 	display: table;
 	text-align: center;
-  min-height: 350px;
+  /*min-height: 350px;*/
   border-bottom: 1px solid rgb(103, 103, 103);
   width: 100%;
-	padding: 90px 0 50px 0;
+	padding: 100px 0 75px 0;
 	margin: 0 auto;
 }
 section > h2 {
@@ -74,6 +75,9 @@ section > h2 {
 	border-radius: 0 0 6px 6px;
 	width: 50%;
 
+}
+section:first-of-type {
+	margin-top: 60px;
 }
 
 .row {
@@ -110,12 +114,25 @@ section > h2 {
 }
 
 
-#skills img {
-	max-height: 80px;
-	display: block;
-	padding-bottom: 20px;
-	margin: 0 auto;
+.skillItems {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
+.skillItems:last-of-type {
+	justify-content: center;
+}
+.skillItems div {
+	margin: 20px;
+}
+.skillItems img {
+	max-height: 80px;
+	padding-bottom: 10px;
+}
+
+
+
 
 #portfolio .cell {
 	text-align: left;
@@ -163,14 +180,11 @@ section i.fa {
 
 
 
-
-
 .push {
   height: 60px;
 }
 footer {
   height: 60px;
-  /*background-color: rgba(140,140,140,0.5);*/
   line-height: 60px;
   text-align: center;
   font-size: 0.8em;
@@ -221,17 +235,18 @@ button:active {
 	color: #3498db;
 }
 
-.portfolio-nav .fa-chevron-left {
+.portfolio-nav .fa-chevron-left, .portfolio-nav .fa-chevron-right {
 	position: absolute;
 	font-size: 4em;
-	left: -100px;
 	top: 180px;
+	cursor: pointer;
+}
+
+.portfolio-nav .fa-chevron-left {
+	left: -100px;
 }
 .portfolio-nav .fa-chevron-right {
-	position: absolute;
-	font-size: 4em;
 	right: -100px;
-	top: 180px;
 }
 .fa-chevron-left:hover, .fa-chevron-right:hover {
 	color: #3498db;
@@ -314,4 +329,8 @@ button:active {
   -webkit-transform:translate3d(900px, 0, 0);
   -moz-transform:translate3d(900px, 0, 0);
   transform:translate3d(900px, 0, 0);
+}
+
+#toast-container.toast-top-right {
+  top: 75px;
 }

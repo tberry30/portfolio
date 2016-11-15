@@ -4,9 +4,9 @@
 angular.module('tbDevPortfolio')
   .controller('AppCtrl', AppCtrl);
 
-  AppCtrl.$inject = ['$state'];
+  AppCtrl.$inject = ['$state', '$http'];
 
-  function AppCtrl($state) {
+  function AppCtrl($state, $http) {
     var appCtrl = this;
 
     appCtrl.counter = 0;
@@ -14,6 +14,12 @@ angular.module('tbDevPortfolio')
 
     appCtrl.back = back;
     appCtrl.forward = forward;
+    appCtrl.submitContact = submitContact;
+
+    toastr.options = {
+      "closeButton": true,
+      "timeOut": "2000"
+    }
 
     ////////////////
 
@@ -38,6 +44,22 @@ angular.module('tbDevPortfolio')
         $state.go(folio[appCtrl.counter]);
       }
     }
+
+    function submitContact(contact) {
+      console.log(contact);
+      $http
+        .post('/api/contact', contact)
+        .then(function(res) {
+          appCtrl.contact.fromName = '';
+          appCtrl.contact.fromEmail = '';
+          appCtrl.contact.content = '';
+          toastr.success('Contact form succussfully submitted.');
+          // if (res.statusCode === 202) {
+          //   console.log('Email delivered');
+          // }
+        });
+    }
+
 
   }
 })();
