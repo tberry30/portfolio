@@ -13,6 +13,7 @@
     <link href="../../bower_components/toastr/toastr.css" rel="stylesheet"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="/assets/js/functions.js"></script>
 
     <script>
       $(function() {
@@ -23,7 +24,7 @@
             if (target.length) {
               $('html, body').animate({
                 scrollTop: target.offset().top -60
-              }, 1000);
+              }, 2000);
               return false;
             }
           }
@@ -38,78 +39,79 @@
         <div class="logo">
           < timberry.io />
         </div>
-
         <nav>
           <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <!-- <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li> -->
+            <!-- <li><a href="#resume">Resume</a></li> -->
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-      </div> <!-- content -->
+      </div>
     </header>
 
-
     <div class="main">
-      <div class="content">
-        <!-- <div ui-view></div> -->
 
         <section id="home">
-          <div class="cell">
-            <img src="/assets/images/tberry.jpg">
+          <div class="content xycenter">
             <div class="home-text">
-              <h2>Tim Berry</h2><br>
-              Full-Stack Web Developer | AngularJS, Node.js, Express, MongoDB<br><br>
-              <a href="https://github.com/tberry30" target="_blank"><i class="fa fa-github-square"></i></a>
-              <a href="https://www.linkedin.com/in/timothyaberry" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-              <!-- <i class="fa fa-facebook-square"></i> -->
-              <!-- <i class="fa fa-twitter-square"></i> -->
-              <a href="#contact"><i class="fa fa-envelope-square"></i></a>
-              <!-- <a href="#contact"><i class="fa fa-envelope-square"></i></a> -->
+              <img src="/assets/images/tberry_right.jpg">
+              <!-- <img src="/assets/images/tberry_bw.png"> -->
+              <div>
+                <h2>Tim Berry</h2><br>
+                Full-Stack Web Developer | AngularJS, Node.js, Express, MongoDB<br><br>
+                <a href="https://github.com/tberry30" target="_blank"><i class="fa fa-github-square"></i></a>
+                <a href="https://www.linkedin.com/in/timothyaberry" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+                <a href="#contact"><i class="fa fa-envelope-square"></i></a>
+              </div>
+            </div>
+          </div>
+          <a href="#about"><i class="fa fa-angle-down"></i></a>
+        </section>
+
+        <section id="about" class="padding">
+          <div class="content">
+            <h2>About</h2>
+            <p>Hello, world! My name is Tim.<br><br>I'm a full-stack web developer, with a background in inventory management, the outdoor industry, and music production. <br><br>Since I started dabbling in the web several years ago, I have found a passion for developing responsive, clean websites that offer a great user experience. In the beginning, I did a lot of self learning, simply by trying to dissect source code, as if I was a child taking apart some electronics, just to see what made it work.<br><br>When I decided to make this my career, I attended DevMountain, where I gained advanced skills in full-stack development focused on Angular and Node.</p>
+          </div>
+        </section>
+
+        <section id="skills" class="padding">
+          <div class="content">
+            <h2>Skills</h2>
+            <div class="skillItems">
+              <div><img src="/assets/images/html5.png"><br>HTML5</div>
+              <div><img src="/assets/images/css3.png"><br>CSS3</div>
+              <div><img src="/assets/images/javascript.png"><br>Javascript</div>
+              <div><img src="/assets/images/angular.png"><br>AngularJS</div>
+            </div>
+            <div class="skillItems">
+              <div><img src="/assets/images/node.png"><br>Node.js</div>
+              <div><img src="/assets/images/git.png"><br>Git</div>
+              <div><img src="/assets/images/gulp.png"><br>Gulp</div>
+              <div><img src="/assets/images/php.png"><br>PHP</div>
+              <!-- <div><img src="/assets/images/react.png"><br>ReactJS</div> -->
+              <!-- <div><img src="/assets/images/sass.png"><br>SASS</div> -->
+            </div>
+            <div class="skillItems">
+              <div><img src="/assets/images/mongodb.png"><br>MongoDB</div>
+              <div><img src="/assets/images/mysql.png"><br>MySQL</div>
             </div>
           </div>
         </section>
 
-        <section id="about">
-          <h2>About</h2>
-          Hello, world! My name is Tim.<br><br>I'm a full-stack web developer, with a background in inventory management, the outdoor industry, and music production. I have a passion for developing responsive, clean websites with a great user experience.
-        </section>
-
-        <section id="skills">
-          <h2>Skills</h2>
-          <div class="skillItems">
-            <div><img src="/assets/images/html5.png"><br>HTML5</div>
-            <div><img src="/assets/images/css3.png"><br>CSS3</div>
-            <div><img src="/assets/images/javascript.png"><br>Javascript</div>
-            <div><img src="/assets/images/angular.png"><br>AngularJS</div>
-            <div><img src="/assets/images/node.png"><br>Node.js</div>
-          </div>
-          <div class="skillItems">
-            <div><img src="/assets/images/git.png"><br>Git</div>
-            <div><img src="/assets/images/gulp.png"><br>Gulp</div>
-            <div><img src="/assets/images/php.png"><br>PHP</div>
-            <div><img src="/assets/images/react.png"><br>ReactJS</div>
-            <div><img src="/assets/images/sass.png"><br>SASS</div>
-          </div>
-          <div class="skillItems">
-            <div><img src="/assets/images/mongodb.png"><br>MongoDB</div>
-            <div><img src="/assets/images/mysql.png"><br>MySQL</div>
-          </div>
-        </section>
 
 
-
-        <section id="portfolio">
-          <h2>Portfolio</h2>
-          <div class="ui-view-container">
-
-            <a class="portfolio-nav" ng-click="appCtrl.back()"><i class="fa fa-chevron-left"></i></a>
-            <a class="portfolio-nav" ng-click="appCtrl.forward()"><i class="fa fa-chevron-right"></i></a>
-
-            <div ui-view="portfolio" class="{{appCtrl.direction}}"></div>
+        <section id="portfolio" class="padding">
+          <div class="content">
+            <h2>Portfolio</h2>
+            <div class="ui-view-container">
+              <a class="portfolio-nav" ng-click="appCtrl.back()"><i class="fa fa-chevron-left"></i></a>
+              <a class="portfolio-nav" ng-click="appCtrl.forward()"><i class="fa fa-chevron-right"></i></a>
+              <div ui-view="portfolio" class="{{appCtrl.direction}}"></div>
+            </div>
           </div>
         </section>
 
@@ -117,22 +119,22 @@
           <h2>Resume</h2>
         </section> -->
 
-        <section id="contact">
-          <h2>Contact</h2>
-          <div class="contact-form">
-            <form name="contactForm" ng-submit="appCtrl.submitContact(appCtrl.contact)">
-              <input type="text" ng-model="appCtrl.contact.fromName" placeholder="Name"><br>
-              <input type="text" ng-model="appCtrl.contact.fromEmail" placeholder="Email"><br>
-              <textarea rows="9" ng-model="appCtrl.contact.content" placeholder="Message"></textarea><br><br>
-
-              <button class="btn" type="submit">Send</button>
-              <button class="btn" type="reset">Reset</button>
-            </form>
-          <div>
+        <section id="contact" class="padding">
+          <div class="content">
+            <h2>Contact</h2>
+            <div class="contact-form">
+              <form name="contactForm" ng-submit="appCtrl.submitContact(appCtrl.contact)">
+                <input type="text" ng-model="appCtrl.contact.fromName" placeholder="Name"><br>
+                <input type="text" ng-model="appCtrl.contact.fromEmail" placeholder="Email"><br>
+                <textarea rows="9" ng-model="appCtrl.contact.content" placeholder="Message"></textarea><br><br><br><br>
+                <button class="btn" type="submit">Send</button>
+                <button class="btn" type="reset">Reset</button>
+              </form>
+            <div>
+          </div>
         </section>
 
 
-      </div> <!-- content -->
       <div class="push"></div>
     </div> <!-- main-content -->
 
