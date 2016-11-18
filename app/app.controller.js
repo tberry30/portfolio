@@ -54,9 +54,6 @@ angular.module('tbDevPortfolio')
           appCtrl.contact.fromEmail = '';
           appCtrl.contact.content = '';
           toastr.success('Contact form succussfully submitted.');
-          // if (res.statusCode === 202) {
-          //   console.log('Email delivered');
-          // }
         });
     }
 
