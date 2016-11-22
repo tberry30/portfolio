@@ -10,7 +10,7 @@ angular.module('tbDevPortfolio')
     var appCtrl = this;
 
     appCtrl.counter = 0;
-    var folio = ['waitr','wasatch-sports','canyon-sports','weather-app']
+    var folio = ['waitr','wasatch-sports','canyon-sports','weather-app','template']
 
     appCtrl.back = back;
     appCtrl.forward = forward;
