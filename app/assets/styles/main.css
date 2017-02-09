@@ -44,6 +44,7 @@ header {
 }
 .logo {
   float: left;
+	font-size: 1.2em;
 }
 
 nav {
@@ -111,7 +112,7 @@ section > div > h2 {
 #home {
 	display: flex;
 	height: 100vh;
-	background-image: url(/assets/images/yosemite.jpg);
+	background-image: url(/assets/images/yosemite_sm.jpg);
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;
@@ -169,7 +170,7 @@ section > div > h2 {
 
 
 #skills {
-	background-image: url(/assets/images/sunset.jpg);
+	background-image: url(/assets/images/sunset_sm.jpg);
 	background-size: cover;
 	background-position: top center;
 	background-attachment: fixed;

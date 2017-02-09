@@ -50,17 +50,17 @@ angular.module('tbDevPortfolio')
             controllerAs: 'portfolioCtrl'
           }
         }
-      })
-      .state('template', {
-        url: '/template',
-        views: {
-          'portfolio': {
-            templateUrl: './portfolio/template.template.html',
-            controller: 'PortfolioCtrl',
-            controllerAs: 'portfolioCtrl'
-          }
-        }
       });
+      // .state('template', {
+      //   url: '/template',
+      //   views: {
+      //     'portfolio': {
+      //       templateUrl: './portfolio/template.template.html',
+      //       controller: 'PortfolioCtrl',
+      //       controllerAs: 'portfolioCtrl'
+      //     }
+      //   }
+      // });
   }
 
 })();
